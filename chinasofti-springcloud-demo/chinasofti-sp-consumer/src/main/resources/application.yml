@@ -1,0 +1,31 @@
+spring:
+  resources:
+    static-locations:
+    - /static/
+  freemarker:
+    template-loader-path:
+    - /WEB-INF/ftl/
+  application:
+    name: chinasofti-sp-consumer
+server:
+  port: 7902
+user: 
+  userServicePath: http://localhost:7801/
+  goodServicepath: http://localhost:7701/
+  goodsOrderServicepath: http://localhost:7601/
+  userLoginPath: http://localhost:8001/
+goods:
+  goodClassServicePath: http://localhost:8801/
+menu:
+  menuServicePath: http://localhost:7501/
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password456@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+feign:
+   hystrix:
+      enabled: false   
